@@ -1,11 +1,10 @@
-
 package edu.ben.lab_1;
 
 public class Circle implements Shape {
     private double radius;
 
     public Circle(double radius) {
-
+setRadius(radius);
     }
 
     public void setRadius(double radius) {
