@@ -1,3 +1,4 @@
+
 package edu.ben.lab_1;
 
 import org.junit.jupiter.api.Assertions;
@@ -11,32 +12,33 @@ import java.util.stream.Stream;
 public class CircleTest {
     @ParameterizedTest
     @MethodSource("provideArea")
-    void testArea(double radius) {
+    void testArea(double radius, double expected) {
         Circle r = new Circle(radius);
-        Assertions.assertEquals(radius*radius* Math.PI, r.area());
+        Assertions.assertEquals(expected, r.area());
     }
 
     private static Stream<Arguments> provideArea() {
         return Stream.of(
                 Arguments.of(1, Math.PI),
-                Arguments.of(2, 4* Math.PI),
-                Arguments.of(3,9*Math.PI)
+                Arguments.of(2, 4*Math.PI),
+                Arguments.of(3, 9*Math.PI)
 
 
         );
     }
+
     @ParameterizedTest
     @MethodSource("providePerimeter")
-    void testPerimeter(double radius) {
+    void testPerimeter(double radius, double expected) {
         Circle s = new Circle(radius);
-        Assertions.assertEquals(2*radius* Math.PI, s.perimeter());
+        Assertions.assertEquals(expected, s.perimeter());
     }
 
     private static Stream<Arguments> providePerimeter() {
         return Stream.of(
-                Arguments.of(1, 2*Math.PI),
-                Arguments.of(2, 4* Math.PI),
-                Arguments.of(3,6*Math.PI)
+                Arguments.of(1, 2 * Math.PI),
+                Arguments.of(2, 4 * Math.PI),
+                Arguments.of(3, 6 * Math.PI)
 
 
         );
