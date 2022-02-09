@@ -1,0 +1,57 @@
+package edu.ben.lab_2;
+
+public class MyStringLinkedList implements MyStringList {
+
+    StringNode head;
+    StringNode secondLast;
+    StringNode node;
+    StringNode next;
+    StringNode size;
+
+
+@Override
+    public StringNode add() {
+        this.node = node;
+        this.next = null;
+        StringNode newNode = new StringNode();
+        return newNode;
+    }
+
+    @Override
+
+    public StringNode clear() {
+        return head = null;
+    }
+    @Override
+
+    public StringNode remove() {
+        if (head == null)
+            return null;
+        if (head.next == null) {
+            return null;
+        }
+        StringNode secondLast = head;
+        while (secondLast.next.next != null)
+            secondLast = secondLast.next;
+
+        secondLast.next = null;
+
+        return head;
+    }
+
+    @Override
+
+    public StringNode size() {
+
+        StringNode value = new StringNode();
+        value = this.head;
+        int i = 0;
+        while (value != null) {
+            i++;
+            value = value.next;
+        }
+        return size;
+    }
+
+
+}
