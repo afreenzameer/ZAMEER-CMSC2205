@@ -1,0 +1,31 @@
+package edu.ben.lab_2;
+
+public interface MyStringList {
+    default StringNode add() {
+
+        System.err.println("This method has not yet been implemented.");
+
+        return null;
+    }
+
+    default StringNode clear() {
+
+        System.err.println("This method has not yet been implemented.");
+
+        return null;
+    }
+
+    default StringNode remove() {
+
+        System.err.println("This method has not yet been implemented.");
+
+        return null;
+    }
+    default StringNode size(){
+
+        System.err.println("This method has not yet been implemented.");
+
+        return null;
+    }
+
+}
