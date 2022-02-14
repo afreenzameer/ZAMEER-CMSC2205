@@ -1,18 +1,17 @@
 package edu.ben.lab_2;
 
 public interface MyStringList {
-    default StringNode add() {
+
+
+    default void add(String value) {
 
         System.err.println("This method has not yet been implemented.");
-
-        return null;
     }
 
-    default StringNode clear() {
+    default void clear() {
 
         System.err.println("This method has not yet been implemented.");
 
-        return null;
     }
 
     default StringNode remove() {
@@ -21,11 +20,11 @@ public interface MyStringList {
 
         return null;
     }
-    default StringNode size(){
+    default int size(){
 
         System.err.println("This method has not yet been implemented.");
 
-        return null;
+        return 0;
     }
 
 }
