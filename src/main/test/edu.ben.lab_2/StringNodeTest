@@ -1,0 +1,101 @@
+package edu.ben.lab_2;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
+
+public class StringNodeTest {
+
+
+
+    @ParameterizedTest
+    @MethodSource("provideSetValue")
+    void testSetValue(String value) {
+        StringNode s = new StringNode();
+        s.setValue("value");
+        s.setValue("value");
+        s.setValue("value");
+        Assertions.assertEquals(value, s.setValue());
+    }
+
+    private static Stream<Arguments> provideSetValue() {
+        return Stream.of(
+                Arguments.of(1),
+                Arguments.of(2),
+                Arguments.of(3)
+
+
+        );
+    }
+
+
+
+    @ParameterizedTest
+    @MethodSource("provideGetValue")
+    void testGetValue(String value) {
+        StringNode r = new StringNode(value);
+        Assertions.assertEquals(r.getValue());
+    }
+
+    private static Stream<Arguments> provideGetValue() {
+        return Stream.of(
+                Arguments.of(1),
+                Arguments.of(2),
+                Arguments.of(3)
+
+
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideSetNext")
+    void testSetNext(String next) {
+        StringNode r = new StringNode(next);
+        Assertions.assertEquals(r.setNext());
+    }
+
+    private static Stream<Arguments> provideSetNext() {
+        return Stream.of(
+                Arguments.of(1),
+                Arguments.of(2),
+                Arguments.of(3)
+
+
+        );
+    }
+    @ParameterizedTest
+    @MethodSource("provideGetNext")
+    void testGetNext(String next) {
+        StringNode r = new StringNode(next);
+        Assertions.assertEquals(r.getNext());
+    }
+
+    private static Stream<Arguments> provideGetNext() {
+        return Stream.of(
+                Arguments.of(1),
+                Arguments.of(2),
+                Arguments.of(3)
+
+
+        );
+    }
+    @ParameterizedTest
+    @MethodSource("provideHasNext")
+    void testHasNext(boolean next) {
+        StringNode r = new StringNode(next);
+        Assertions.assertEquals(r.hasNext());
+    }
+
+    private static Stream<Arguments> provideHasNext() {
+        return Stream.of(
+                Arguments.of(next),
+                Arguments.of(null),
+                Arguments.of(next)
+
+
+        );
+    }
+}
