@@ -1,26 +1,30 @@
 package edu.ben.lab_2;
 
 public class StringNode {
-    public StringNode next;
-    public String value;
-    public String node;
-    public String head;
-    private String hasNext;
+   private StringNode next;
+    private String value;
 
-    public void StringNode() {
-        this.node = value;
-        this.next = null;
+    public StringNode(String value) {
 
     }
-    public void setValue() {
+
+    public StringNode() {
+
+    }
+
+
+    public void setValue(String value) {
+
         this.value = value;
     }
+
     public String getValue() {
+
         return value;
     }
 
-    public void setNext() {
-        this.value = value;
+    public void setNext(StringNode next) {
+        this.next = next;
     }
 
     public StringNode getNext() {
@@ -32,12 +36,4 @@ public class StringNode {
     }
 
 
-
-    public String getNode() {
-       return node;
-    }
-
-    public void setNode(String node) {
-        this.node = node;
-    }
 }
