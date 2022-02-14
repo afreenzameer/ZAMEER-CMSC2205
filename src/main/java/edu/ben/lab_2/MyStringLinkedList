@@ -3,55 +3,72 @@ package edu.ben.lab_2;
 public class MyStringLinkedList implements MyStringList {
 
     StringNode head;
-    StringNode secondLast;
-    StringNode node;
-    StringNode next;
-    StringNode size;
 
+    public MyStringLinkedList(String value, String expected) {
 
-@Override
-    public StringNode add() {
-        this.node = node;
-        this.next = null;
-        StringNode newNode = new StringNode();
-        return newNode;
     }
+
+    public MyStringLinkedList(int value, int expected) {
+    }
+
+    public MyStringLinkedList() {
+
+    }
+
 
     @Override
+    public void add(String value) {
+        if (head == null) {
+            head = new StringNode();
+            return;
+        }
 
-    public StringNode clear() {
-        return head = null;
+        StringNode current = head;
+        while (current.hasNext()) {
+            current = current.getNext();
+        }
+        current.setNext(new StringNode());
+
     }
+
+
+
+    @Override
+    public void clear() {
+        head = null;
+    }
+
     @Override
 
     public StringNode remove() {
         if (head == null)
             return null;
-        if (head.next == null) {
+        if (head.getNext() == null) {
             return null;
         }
         StringNode secondLast = head;
-        while (secondLast.next.next != null)
-            secondLast = secondLast.next;
+        while (secondLast.getNext().getNext() != null)
+            secondLast = secondLast.getNext();
 
-        secondLast.next = null;
 
         return head;
     }
 
     @Override
+    public int size() {
 
-    public StringNode size() {
+        StringNode current = head;
+        int length = 0;
 
-        StringNode value = new StringNode();
-        value = this.head;
-        int i = 0;
-        while (value != null) {
-            i++;
-            value = value.next;
+        while (current != null) {
+            current = current.getNext();
+            length++;
         }
-        return size;
+        return length;
+
     }
 
 
 }
+
+
