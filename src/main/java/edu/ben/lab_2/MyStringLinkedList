@@ -18,8 +18,8 @@ public class MyStringLinkedList implements MyStringList {
 
     @Override
     public void add(String value) {
-        if (head == null) {
-            head = new StringNode();
+        if (this.head == null) {
+            this.head = new StringNode(value);
             return;
         }
 
@@ -27,31 +27,36 @@ public class MyStringLinkedList implements MyStringList {
         while (current.hasNext()) {
             current = current.getNext();
         }
-        current.setNext(new StringNode());
+        current.setNext(new StringNode(value));
 
     }
-
 
 
     @Override
     public void clear() {
-        head = null;
+
+        this.head = null;
     }
 
     @Override
-
-    public StringNode remove() {
-        if (head == null)
-            return null;
-        if (head.getNext() == null) {
+    public String remove() {
+        if (this.head == null) {
             return null;
         }
-        StringNode secondLast = head;
-        while (secondLast.getNext().getNext() != null)
-            secondLast = secondLast.getNext();
+        if (!this.head.hasNext()) {
+            String value = this.head.getValue();
+           this.head = null;
+           return value;
+        }
 
-
-        return head;
+        StringNode current = head;
+        StringNode p = null;
+        while (current.hasNext()) {
+            p = current;
+            current = current.getNext();
+        }
+        p.setNext(null);
+        return current.getValue();
     }
 
     @Override
@@ -70,5 +75,3 @@ public class MyStringLinkedList implements MyStringList {
 
 
 }
-
-
