@@ -14,7 +14,7 @@ public interface MyStringList {
 
     }
 
-    default StringNode remove() {
+    default String remove() {
 
         System.err.println("This method has not yet been implemented.");
 
