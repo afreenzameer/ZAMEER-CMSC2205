@@ -1,39 +1,26 @@
 package edu.ben.lab_2;
 
 public class StringNode {
-   private StringNode next;
+
+    private StringNode next;
     private String value;
 
-    public StringNode(String value) {
+    public StringNode(String value) {this.setValue(value);}
 
-    }
+    public void setValue(String value) {this.value = value;}
 
-    public StringNode() {
-
-    }
-
-
-    public void setValue(String value) {
-
-        this.value = value;
-    }
-
-    public String getValue() {
-
-        return value;
-    }
+    public String getValue() {return this.value;}
 
     public void setNext(StringNode next) {
         this.next = next;
     }
 
     public StringNode getNext() {
-        return next;
+        return this.next;
     }
 
     public boolean hasNext() {
-        return next != null;
+        return this.next != null;
     }
-
 
 }
