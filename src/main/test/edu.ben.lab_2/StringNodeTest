@@ -9,42 +9,35 @@ import java.util.stream.Stream;
 
 public class StringNodeTest {
 
-
-
     @ParameterizedTest
     @MethodSource("provideSetValue")
     void testSetValue(String value) {
-        StringNode s = new StringNode();
-        s.setValue("value");
-        s.setValue("value");
-        s.setValue("value");
-        Assertions.assertEquals(value, s.setValue());
+        StringNode s = new StringNode(value);
+        Assertions.assertEquals(value, s.getValue());
     }
 
     private static Stream<Arguments> provideSetValue() {
         return Stream.of(
-                Arguments.of(1),
-                Arguments.of(2),
-                Arguments.of(3)
+                Arguments.of("Takis"),
+                Arguments.of("Haribos"),
+                Arguments.of("Red Bull")
 
 
         );
     }
 
-
-
     @ParameterizedTest
     @MethodSource("provideGetValue")
     void testGetValue(String value) {
-        StringNode r = new StringNode(value);
-        Assertions.assertEquals(r.getValue());
+        StringNode s = new StringNode(value);
+        Assertions.assertEquals(value, s.getValue());
     }
 
     private static Stream<Arguments> provideGetValue() {
         return Stream.of(
-                Arguments.of(1),
-                Arguments.of(2),
-                Arguments.of(3)
+                Arguments.of("hearts"),
+                Arguments.of("stars"),
+                Arguments.of("circles")
 
 
         );
@@ -53,49 +46,52 @@ public class StringNodeTest {
     @ParameterizedTest
     @MethodSource("provideSetNext")
     void testSetNext(String next) {
-        StringNode r = new StringNode(next);
-        Assertions.assertEquals(r.setNext());
+        StringNode s = new StringNode(next);
+        Assertions.assertEquals(next, s.getValue());
     }
 
     private static Stream<Arguments> provideSetNext() {
         return Stream.of(
-                Arguments.of(1),
-                Arguments.of(2),
-                Arguments.of(3)
+                Arguments.of("car"),
+                Arguments.of("table"),
+                Arguments.of("book")
 
 
         );
     }
+
     @ParameterizedTest
     @MethodSource("provideGetNext")
     void testGetNext(String next) {
-        StringNode r = new StringNode(next);
-        Assertions.assertEquals(r.getNext());
+        StringNode s = new StringNode(next);
+        Assertions.assertEquals(next, s.getValue());
     }
 
     private static Stream<Arguments> provideGetNext() {
         return Stream.of(
-                Arguments.of(1),
-                Arguments.of(2),
-                Arguments.of(3)
+                Arguments.of("chicken"),
+                Arguments.of("nugget"),
+                Arguments.of("necklace")
 
 
         );
     }
+
     @ParameterizedTest
     @MethodSource("provideHasNext")
-    void testHasNext(boolean next) {
-        StringNode r = new StringNode(next);
-        Assertions.assertEquals(r.hasNext());
+    void testHasNext(String next) {
+        StringNode s = new StringNode(next);
+        Assertions.assertEquals(next, s.getValue());
     }
 
     private static Stream<Arguments> provideHasNext() {
         return Stream.of(
-                Arguments.of(next),
-                Arguments.of(null),
-                Arguments.of(next)
+                Arguments.of("group"),
+                Arguments.of("liquid"),
+                Arguments.of("change")
 
 
         );
     }
+
 }
