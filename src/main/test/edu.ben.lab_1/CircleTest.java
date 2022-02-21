@@ -2,6 +2,7 @@
 package edu.ben.lab_1;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -10,6 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 public class CircleTest {
+
     @ParameterizedTest
     @MethodSource("provideArea")
     void testArea(double radius, double expected) {
