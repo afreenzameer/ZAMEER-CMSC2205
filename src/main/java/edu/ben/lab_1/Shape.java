@@ -1,5 +1,7 @@
 package edu.ben.lab_1;
 
+
+// This is a shape
 public interface Shape {
     Double area();
     Double perimeter();
